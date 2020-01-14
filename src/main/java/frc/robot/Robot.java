@@ -3,23 +3,19 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.subsystems.drivetrain.Drivetrain;
 
 /**
  * Don't change the name of this class since the VM is set up to run this
  */
 public class Robot extends TimedRobot {
-
-    /**
-     * Initialize all systems here as public & static.
-     * Ex: public static System system = new System();
-     */
-
-
+    public static Drivetrain drivetrain = new Drivetrain();
     public static OI oi = new OI();
 
 
     @Override
     public void robotInit() {
+
     }
 
     /**
@@ -50,6 +46,13 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopPeriodic() {
+        CommandScheduler.getInstance().run();
+        //rightA.set(-0.25);
+        //rightB.set(-0.25);
+        //leftA.set(0.25);
+        //leftB.set(0.25); forward
+
+
     }
 
     /**
