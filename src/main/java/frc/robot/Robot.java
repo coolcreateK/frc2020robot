@@ -41,18 +41,21 @@ public class Robot extends TimedRobot {
     public void autonomousPeriodic() {
     }
 
+    @Override
+    public void teleopInit() {
+        drivetrain.timer.reset();
+    }
+
     /**
      * This function is called periodically during operator control.
      */
     @Override
     public void teleopPeriodic() {
         CommandScheduler.getInstance().run();
-        //rightA.set(-0.25);
-        //rightB.set(-0.25);
-        //leftA.set(0.25);
-        //leftB.set(0.25); forward
-
-
+        //drivetrain.rightA.set(-0.25);
+        //drivetrain.rightB.set(-0.25);
+        //drivetrain.leftA.set(0.25);
+        //drivetrain.leftB.set(0.25);
     }
 
     /**

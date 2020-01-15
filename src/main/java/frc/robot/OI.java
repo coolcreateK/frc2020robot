@@ -22,7 +22,7 @@ public class OI {
         manipController = new XboxController(1);
     }
     public double leftDriverY() {
-        return -1*driverController.getY(GenericHID.Hand.kLeft);
+        return -driverController.getY(GenericHID.Hand.kLeft);
     }
     public double rightDriverX() {
         return driverController.getX(GenericHID.Hand.kRight);
