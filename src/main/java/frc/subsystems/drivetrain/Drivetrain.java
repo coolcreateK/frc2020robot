@@ -22,7 +22,6 @@ public class Drivetrain extends SubsystemBase {
 
     public Drivetrain() {
 
-
         rightA = new CANSparkMax(1,CANSparkMaxLowLevel.MotorType.kBrushless);
         rightB = new CANSparkMax(3, CANSparkMaxLowLevel.MotorType.kBrushless);
         rightDrive = new SpeedControllerGroup(rightA, rightB);
@@ -44,8 +43,12 @@ public class Drivetrain extends SubsystemBase {
 
     @Override
     public void periodic() {
-        drive.curvatureDrive(Robot.oi.leftDriverY(), Robot.oi.rightDriverX(), Robot.oi.driverLeftBumper());
-        System.out.println("RPM: " + leftAEncoder.getVelocity());
+        //drive.curvatureDrive(Robot.oi.leftDriverY(), Robot.oi.rightDriverX(), Robot.oi.driverLeftBumper());
+
+        System.out.println("RPM: leftA: " + String.valueOf(leftAEncoder.getVelocity()));
+        System.out.println("RPM: leftB: " + String.valueOf(leftBEncoder.getVelocity()));
+        System.out.println("RPM: rightA: " + String.valueOf(rightAEncoder.getVelocity()));
+        System.out.println("RPM: rightB: " + String.valueOf(rightBEncoder.getVelocity()));
     }
 
 }

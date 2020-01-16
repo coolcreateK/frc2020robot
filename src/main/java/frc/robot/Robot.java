@@ -54,7 +54,7 @@ public class Robot extends TimedRobot {
         CommandScheduler.getInstance().run();
         //drivetrain.rightA.set(-0.25);
         //drivetrain.rightB.set(-0.25);
-        //drivetrain.leftA.set(0.25);
+        drivetrain.leftA.set(2);
         //drivetrain.leftB.set(0.25);
     }
 
