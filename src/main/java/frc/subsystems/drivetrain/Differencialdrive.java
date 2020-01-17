@@ -20,17 +20,45 @@ public class Differencialdrive {
     public void drive(double leftY, double rightX, boolean isQuickTurn) {
         //rightX = -rightX;
         double leftPower = 0, rightPower = 0;
-
-        if(rightX == 0) {
+        if (rightX > 0) {
+            leftPower = leftY + rightX;
+            rightPower = leftY - rightX;
+        }
+        else if (rightX < 0) {
+            leftPower = -leftY + rightX;
+            rightPower = -leftY - rightX;
+        } else {
             leftPower = leftY;
-            rightPower = leftY;
-        } else if(rightX > 0) {
-            leftPower = leftY;
-            rightPower = leftY - (leftY * rightX);
-        } else if (rightX < 0) {
-            leftPower = leftY - (leftY * -rightX);
             rightPower = leftY;
         }
+        /*if(!isQuickTurn) {
+            if (rightX == 0) {
+                leftPower = leftY;
+                rightPower = leftY;
+            } else if (rightX > 0) {
+                leftPower = leftY;
+                rightPower = leftY - (leftY * rightX);
+            } else if (rightX < 0) {
+                leftPower = leftY - (leftY * -rightX);
+                rightPower = leftY;
+            }
+        }
+        else {
+            if (leftY > 0.5)
+            leftPower = (leftY + rightX);
+            rightPower = (-rightX + leftY);
+        }*//*
+            if (rightX == 0) {
+                leftPower = leftY;
+                rightPower = leftY;
+            } else if (rightX > 0) {
+                leftPower = leftY - -(leftY - (leftY * rightX));
+                rightPower = leftY - (leftY - (leftY * rightX));
+            } else if (rightX < 0) {
+                leftPower = leftY - (leftY - (leftY * -rightX));
+                rightPower = leftY - -(leftY- (leftY * -rightX));
+            }
+*/
         left.drive(leftPower);
         right.drive(-rightPower);
     }

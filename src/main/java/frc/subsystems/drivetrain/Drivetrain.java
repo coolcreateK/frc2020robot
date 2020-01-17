@@ -44,7 +44,7 @@ public class Drivetrain extends SubsystemBase {
         //leftDrive.drive(0.25);
         //rightDrive.drive(0.25);
 
-        diffDrive.drive(oi.leftDriverY(), oi.rightDriverX(),true);
+        diffDrive.drive(oi.leftDriverY(), oi.rightDriverX(), oi.driverLeftBumper());
 
 
        // rightB.set(ControlMode.PercentOutput,0.25);
