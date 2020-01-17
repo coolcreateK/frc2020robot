@@ -25,5 +25,7 @@ public class SpeedController extends SubsystemBase {
 
         A.set(ControlMode.PercentOutput,value);
         B.set(ControlMode.PercentOutput,value);
+
+
     }
 }
