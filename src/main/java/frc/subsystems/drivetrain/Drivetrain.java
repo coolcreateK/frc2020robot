@@ -1,8 +1,10 @@
 package frc.subsystems.drivetrain;
 
+import com.revrobotics.CANEncoder;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
@@ -31,13 +33,17 @@ public class Drivetrain extends SubsystemBase {
         leftB = new TalonSRX(1);
         leftDrive = new SpeedController(leftA, leftB);
         drive = new Differencialdrive(leftDrive, rightDrive);
-
     }
+
+    public Timer timer = new Timer();
 
     @Override
     public void periodic() {
-//        leftA.set(ControlMode.PercentOutput,0.1);
-       // drive.curvatureDrive(Robot.oi.leftDriverY(), Robot.oi.rightDriverX(), Robot.oi.driverLeftBumper());
+        //drive.curvatureDrive(Robot.oi.leftDriverY(), Robot.oi.rightDriverX(), Robot.oi.driverLeftBumper());
+        //System.out.println("RPM: leftA: " + String.valueOf(leftAEncoder.getVelocity()));
+        //System.out.println("RPM: leftB: " + String.valueOf(leftBEncoder.getVelocity()));
+        //System.out.println("RPM: rightA: " + String.valueOf(rightAEncoder.getVelocity()));
+        //System.out.println("RPM: rightB: " + String.valueOf(rightBEncoder.getVelocity()));
     }
 
 

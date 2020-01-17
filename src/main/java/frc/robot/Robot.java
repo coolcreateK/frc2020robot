@@ -57,6 +57,11 @@ public class Robot extends TimedRobot {
     public void autonomousPeriodic() {
     }
 
+    @Override
+    public void teleopInit() {
+        drivetrain.timer.reset();
+    }
+
     /**
      * This function is called periodically during operator control.
      */
@@ -67,8 +72,6 @@ public class Robot extends TimedRobot {
         //rightB.set(-0.25);
         leftA.set(ControlMode.PercentOutput,0.25);
         //leftB.set(0.25); forward
-
-
     }
 
     /**
