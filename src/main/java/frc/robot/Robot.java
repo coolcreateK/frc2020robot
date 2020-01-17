@@ -70,7 +70,7 @@ public class Robot extends TimedRobot {
         CommandScheduler.getInstance().run();
         //rightA.set(-0.25);
         //rightB.set(-0.25);
-        leftA.set(ControlMode.PercentOutput,0.25);
+        //leftA.set(ControlMode.PercentOutput,0.25);
         //leftB.set(0.25); forward
     }
 

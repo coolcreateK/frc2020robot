@@ -12,14 +12,27 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.*;
 import com.ctre.phoenix.sensors.*;
 public class Differencialdrive {
-    public SpeedController left,right;
-    public Differencialdrive(SpeedController left1,SpeedController right1){
-        left=left1;
-        right=right1;
+    public SpeedController left, right;
+    public Differencialdrive(SpeedController left1, SpeedController right1){
+        left = left1;
+        right = right1;
     }
-    public void drive(double valueleft,double valueright){
-        left.drive(valueleft);
-        right.drive(valueright);
+    public void drive(double leftY, double rightX, boolean isQuickTurn) {
+        //rightX = -rightX;
+        double leftPower = 0, rightPower = 0;
+
+        if(rightX == 0) {
+            leftPower = leftY;
+            rightPower = leftY;
+        } else if(rightX > 0) {
+            leftPower = leftY;
+            rightPower = leftY - (leftY * rightX);
+        } else if (rightX < 0) {
+            leftPower = leftY - (leftY * -rightX);
+            rightPower = leftY;
+        }
+        left.drive(leftPower);
+        right.drive(-rightPower);
     }
 
 }

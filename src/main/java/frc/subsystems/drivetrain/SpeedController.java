@@ -22,7 +22,6 @@ public class SpeedController extends SubsystemBase {
     }
 
     public void drive(double value) {
-
         A.set(ControlMode.PercentOutput,value);
         B.set(ControlMode.PercentOutput,value);
 
