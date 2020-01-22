@@ -16,13 +16,16 @@ import edu.wpi.first.wpilibj.Joystick;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.*;
 import com.ctre.phoenix.sensors.*;
+import frc.subsystems.shooter.Shooter_with_controller;
+
 /**
  * Don't change the name of this class since the VM is set up to run this
  */
 public class Robot extends TimedRobot {
     public static Drivetrain drivetrain = new Drivetrain();
     public static OI oi = new OI();
-    public TalonSRX leftA=new TalonSRX(4);
+    public static Shooter_with_controller shooter = new Shooter_with_controller();
+  //  public CANSparkMax leftA=new CANSparkMax(4,CANSparkMaxLowLevel.MotorType.kBrushless);
     //number 1 runs the left wheel toward the front
     //number 3 runs the left wheel toward the front
     //number 2 runs the right wheel toward the rear
@@ -68,6 +71,7 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
         CommandScheduler.getInstance().run();
+        //leftA.set(0.25);
         //rightA.set(-0.25);
         //rightB.set(-0.25);
         //leftA.set(ControlMode.PercentOutput,0.25);

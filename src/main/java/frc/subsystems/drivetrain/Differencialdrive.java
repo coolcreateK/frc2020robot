@@ -21,16 +21,6 @@ public class Differencialdrive {
         //rightX = -rightX;
         double leftPower = 0, rightPower = 0;
 
-        if(rightX == 0) {
-            leftPower = leftY;
-            rightPower = leftY;
-        } else if(rightX > 0) {
-            leftPower = leftY;
-            rightPower = leftY - (leftY * rightX);
-        } else if (rightX < 0) {
-            leftPower = leftY - (leftY * -rightX);
-            rightPower = leftY;
-        }
         left.drive(leftPower);
         right.drive(-rightPower);
     }

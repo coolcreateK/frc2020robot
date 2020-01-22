@@ -39,23 +39,7 @@ public class Drivetrain extends SubsystemBase {
 
     public Timer timer = new Timer();
 
-    @Override
-    public void periodic() {
-        //leftDrive.drive(0.25);
-        //rightDrive.drive(0.25);
 
-        diffDrive.drive(oi.leftDriverY(), oi.rightDriverX(),true);
-
-
-       // rightB.set(ControlMode.PercentOutput,0.25);
-        //drive.drive(0.25,-0.25);
-
-        //drive.curvatureDrive(Robot.oi.leftDriverY(), Robot.oi.rightDriverX(), Robot.oi.driverLeftBumper());
-        //System.out.println("RPM: leftA: " + String.valueOf(leftAEncoder.getVelocity()));
-        //System.out.println("RPM: leftB: " + String.valueOf(leftBEncoder.getVelocity()));
-        //System.out.println("RPM: rightA: " + String.valueOf(rightAEncoder.getVelocity()));
-        //System.out.println("RPM: rightB: " + String.valueOf(rightBEncoder.getVelocity()));
-    }
 
 
 }
